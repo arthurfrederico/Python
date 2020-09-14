@@ -1,0 +1,14 @@
+gene = input('Digite o gene de interesse: ')
+refArquivo = open("C:/Users/arthur/Downloads/20linhas.fasta")
+sequencia = ""
+while refArquivo:
+    linha = refArquivo.readline()
+    if linha[1:len(gene)+1] == gene:
+        linha = refArquivo.readline()
+        while linha[0]!='>':
+            sequencia += linha.replace('\n','')
+            linha = refArquivo.readline()
+        print(gene,'\t',sequencia)
+    if linha == "":
+        break
+refArquivo.close()
