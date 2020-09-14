@@ -1,1 +1,26 @@
+def Name_Organizer(FASTA,output):
 
+    import os
+    import re
+
+    in_file=open(FASTA,'r')
+    dir,file=os.path.split(FASTA)
+    temp = os.path.join(dir,output)
+    out_file=open(temp,'w')
+
+    data=''
+    name_list=[]
+
+    for line in in_file:
+
+        line=line.strip()
+        for i in line:
+            if i=='>':
+                name_list.append(line)
+                break
+            else:
+                line=line.upper()
+        if all([k==k.upper() for k in line]):
+            data=data+line
+
+    print data
