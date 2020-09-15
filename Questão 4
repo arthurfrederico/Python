@@ -1,1 +1,7 @@
+qual a finalidade das função upper?
+Retorna uma cópia da String, convertendo tudo para maiúsculo
+
+qual a finalidade das função rstrip?
+rstrip elimina o último caracter da string, significa right strip
+
 
